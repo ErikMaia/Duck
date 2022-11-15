@@ -15,14 +15,18 @@ public class DuckSimulator {
         DuckSimulator simulator = new DuckSimulator();
         simulator.simulate();
     }
+    /**
+     * 
+     */
     void simulate(){
-        Quackable mallard = new MallardDuck();
-        Quackable readhead = new ReadheadDuck();
-        Quackable duckCall = new DuckCall();
+        Quackable mallard = new QuarkCounter(new MallardDuck());
+        Quackable readhead = new QuarkCounter(new ReadheadDuck());
+        Quackable duckCall = new QuarkCounter(new DuckCall());
         System.out.println("Duck Simulator");
         simulate(mallard);
         simulate(readhead);
         simulate(duckCall);
+        System.out.println("The ducks quarcked" + QuarkCounter.getQuacks());
     }
     void simulate(Quackable duck){
         duck.quack();

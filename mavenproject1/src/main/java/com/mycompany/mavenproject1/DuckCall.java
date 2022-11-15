@@ -9,5 +9,10 @@ package com.mycompany.mavenproject1;
  * @author erik
  */
 public class DuckCall implements Quackable {
-    
+
+    @Override
+    public void quack() {
+        System.out.println("quack");
+    }
+
 }

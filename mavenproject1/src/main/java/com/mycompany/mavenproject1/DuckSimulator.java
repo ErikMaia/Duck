@@ -21,13 +21,16 @@ public class DuckSimulator {
         Quackable readhead = duckFactory.CreateReadheadDuck();
         Quackable duckCall = duckFactory.CreateDuckCall();
         Quackable rubberDuck = duckFactory.CreateRubberDuck();
-        
+        Quackable goose = new GooseAdapter(new Goose());
+
+
         System.out.println("Duck Simulator");
         
         simulate(mallard);
         simulate(readhead);
         simulate(duckCall);
         simulate(rubberDuck);
+        simulate(goose);
         System.out.println("The ducks quarcked " + QuarkCounter.getQuacks());
     }
     void simulate(Quackable duck){

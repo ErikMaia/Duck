@@ -13,20 +13,22 @@ public class DuckSimulator {
 
     public static void main(String[] args) {
         DuckSimulator simulator = new DuckSimulator();
-        simulator.simulate();
+        AbstractDuckFactory duckFactory = new  CountingDuckFactory();
+        simulator.simulate(duckFactory);
     }
-    /**
-     * 
-     */
-    void simulate(){
-        Quackable mallard = new QuarkCounter(new MallardDuck());
-        Quackable readhead = new QuarkCounter(new ReadheadDuck());
-        Quackable duckCall = new QuarkCounter(new DuckCall());
+    void simulate(AbstractDuckFactory duckFactory){
+        Quackable mallard = duckFactory.CreateMallardDuck();
+        Quackable readhead = duckFactory.CreateReadheadDuck();
+        Quackable duckCall = duckFactory.CreateDuckCall();
+        Quackable rubberDuck = duckFactory.CreateRubberDuck();
+        
         System.out.println("Duck Simulator");
+        
         simulate(mallard);
         simulate(readhead);
         simulate(duckCall);
-        System.out.println("The ducks quarcked" + QuarkCounter.getQuacks());
+        simulate(rubberDuck);
+        System.out.println("The ducks quarcked " + QuarkCounter.getQuacks());
     }
     void simulate(Quackable duck){
         duck.quack();

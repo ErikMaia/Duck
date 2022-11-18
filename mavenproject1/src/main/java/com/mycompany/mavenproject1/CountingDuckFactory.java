@@ -1,7 +1,6 @@
 package com.mycompany.mavenproject1;
 
 public class CountingDuckFactory extends AbstractDuckFactory {
-
     @Override
     public Quackable CreateMallardDuck() {
         return new QuarkCounter(new MallardDuck());

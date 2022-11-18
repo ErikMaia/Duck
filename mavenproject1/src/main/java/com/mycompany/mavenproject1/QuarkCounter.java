@@ -9,6 +9,7 @@ package com.mycompany.mavenproject1;
  * @author erik
  */
 public class QuarkCounter implements Quackable {
+    Observable observable;
     Quackable duck;
     static int numberOfQuack;
    
@@ -25,6 +26,16 @@ public class QuarkCounter implements Quackable {
     
     public static int getQuacks(){
         return numberOfQuack;
+    }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        observable.registerObserver(observer);
+    }
+
+    @Override
+    public void notifyObserver() {
+        observable.notifyObserver();
     }
     
 }

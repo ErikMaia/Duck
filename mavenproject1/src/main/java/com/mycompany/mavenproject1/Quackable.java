@@ -8,6 +8,6 @@ package com.mycompany.mavenproject1;
  *
  * @author erik
  */
-public interface Quackable {
+public interface Quackable extends QuackObservable{
     public void quack(); 
 }

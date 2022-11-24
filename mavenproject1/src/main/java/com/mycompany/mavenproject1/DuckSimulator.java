@@ -41,14 +41,14 @@ public class DuckSimulator {
         flockOfMalard.add(mallardThree);
         flockOfDucks.add(flockOfMalard);
 
+        
+        Quackologist quackologist = new Quackologist();
+        flockOfDucks.registerObserver(quackologist);
         simulate(flockOfDucks);
 
 
         System.out.println("The ducks quarcked " + QuarkCounter.getQuacks());
-
-        Quackologist quackologist = new Quackologist();
-        flockOfDucks.registerObserver(quackologist);
-        
+       
     }
     void simulate(Quackable duck){
         duck.quack();
